@@ -1,0 +1,17 @@
+h2. Ruby Music Collection
+
+This is a collection of music written purely in ruby. Original contributions from jstrait's "wavefile gem":https://github.com/jstrait/wavefile.
+
+h3. Listen
+
+bq. ruby <song_name>.rb # generate a wave file of a song
+
+Additional tuning files can be found in the <code>/lib/</code>. Simply require them after the synthesizer like so:
+
+bq.
+require './synth.rb'
+require './19-edo.rb'
+
+h3. TODO
+
+* support non-octave tunings
