@@ -2,7 +2,7 @@
 
 class MusicTheory
 
-  NoteRatios =
+  StandardNoteRatios =
   {
     # Perfect unison (P1)
     '0'    => 1.0,
@@ -16,7 +16,7 @@ class MusicTheory
     'bf'   => 2**(1.0/12),
     'cff'  => 2**(1.0/12),
 
-    # Major Second (M2)
+    # Major second (M2)
     '2'    => 2**(2.0/12),
     'b'    => 2**(2.0/12),
     'ass'  => 2**(2.0/12),
@@ -385,7 +385,11 @@ class Note
       @note_name.gsub! '𝄪', 'ss'
       @note_name.gsub! '♭', 'f'
       @note_name.gsub! '𝄫', 'ff'
-      note_ratio = MusicTheory::NoteRatios[@note_name] * octave_multiplier
+      note_ratio = if defined? MusicTheory::NoteRatios
+        MusicTheory::NoteRatios[@note_name] * octave_multiplier
+      else
+        MusicTheory::StandardNoteRatios[@note_name] * octave_multiplier
+      end
       @frequency = note_ratio * MiddleFrequency
     end
   end

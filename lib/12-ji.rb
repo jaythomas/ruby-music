@@ -14,7 +14,7 @@ class MusicTheory
     'bf'   => 16.0 / 15,
     'cff'  => 16.0 / 15,
 
-    # Major Second (M2)
+    # Major second (M2)
     '2'    => 9.0 / 8,
     'b'    => 9.0 / 8,
     'ass'  => 9.0 / 8,
@@ -73,7 +73,7 @@ class MusicTheory
     'gs'   => 15.0 / 8,
     'af'   => 15.0 / 8,
 
-    # Perfect Octave (P8)
+    # Perfect octave (P8)
     '12'   => 2.0
   }
 
